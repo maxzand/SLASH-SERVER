@@ -34,6 +34,6 @@ remote func AuthenticatePlayer(username, password, player_id):
 	else:
 		print("Successful Authentication")
 		result = true 
-	print("Authentication result sent to gateway server")
+	print("authentication result send to gatewat server")
 	rpc_id(gateway_id, "AuthenticationResults", result, player_id)
 	
