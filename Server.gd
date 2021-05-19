@@ -17,6 +17,8 @@ func StartServer():
 	
 func _Peer_Connected(player_id):
 	print("User " + str(player_id) + " Connected")
+	rpc_id(0, "SpawnNewPlayer", player_id, Vector2(377, -677))
+	
 	
 func _Peer_Disconnected(player_id):
 	print("User " + str(player_id) + " Disconnected")
