@@ -8,10 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="Gateway"
 config/icon="res://icon.png"
+
+[autoload]
+
+Gateway="*res://Singletons/Gateway.gd"
+Authenticate="*res://Singletons/Authenticate.gd"
 
 [physics]
 
@@ -19,5 +29,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES3"
 environment/default_environment="res://default_env.tres"
