@@ -4,7 +4,7 @@ var world_state = {}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if not get_parent().player_state_collection.duplicate(true):
+	if not get_parent().player_state_collection.empty():
 		world_state = get_parent().player_state_collection.duplicate(true)
 		for player in world_state.keys():
 			world_state[player].erase("T")
