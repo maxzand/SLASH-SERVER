@@ -4,6 +4,7 @@ var network = NetworkedMultiplayerENet.new()
 var port = 1909
 var max_players = 100
 
+var player_state_collection = {}
 
 func _ready():
 	StartServer()
@@ -22,3 +23,15 @@ func _Peer_Connected(player_id):
 	
 func _Peer_Disconnected(player_id):
 	print("User " + str(player_id) + " Disconnected")
+	player_state_collection.erase(player_id)
+
+remote func ReceivePlayerState(player_state):
+	var player_id = get_tree().get_rpc_sender_id()
+	if player_state_collection.has(player_id):
+		if player_state_collection[player_id]["T"] < player_state["T"]:
+			player_state_collection[player_id] = player_state
+	else:
+		player_state_collection
+		
+func SendWorldState(wolrd_state):
+	rpc_unreliable_id(0, "ReceiveWorldState")
