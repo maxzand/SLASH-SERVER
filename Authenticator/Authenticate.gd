@@ -20,7 +20,7 @@ func _Peer_Connected(gateway_id):
 func _Peer_Disconnected(gateway_id):
 	print("Gateway " + str(gateway_id) + " Disconnected")
 
-remote func authenticate_player(username, password, player_id):
+remote func AuthenticatePlayer(username, password, player_id):
 	print("authentication request received")
 	var gateway_id = get_tree().get_rpc_sender_id()
 	var result

@@ -26,4 +26,4 @@ func AuthenticatePlayer(username, password, player_id):
 	
 remote func AuthenticationResults(result, player_id):
 	print("Results receieved and replying to player")
-	Gateway.ReturningLoginRequest(result, player_id)
+	Gateway.ReturnLoginRequest(result, player_id)

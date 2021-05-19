@@ -29,7 +29,7 @@ func _Peer_Connected(player_id):
 func _Peer_Disconnected(player_id):
 	print("User " + str(player_id) + " Disconnected")
 	
-remote func Loginrequest(username, password):
+remote func LoginRequest(username, password):
 	print("Login request recieved")
 	var player_id = custom_multiplayer.get_rpc_sender_id()
 	Authenticate.AuthenticatePlayer(username, password, player_id)
