@@ -21,8 +21,8 @@ func _Peer_Connected(player_id):
 	
 	
 func _Peer_Disconnected(player_id):
-	print("User " + str(player_id) + " Disconnected")
-	player_state_collection.erase(player_id)
+		rpc_id(0, "DespawnPlayer", player_id)
+		player_state_collection.erase(player_id)
 
 remote func ReceivePlayerState(player_state):
 	var player_id = get_tree().get_rpc_sender_id()
